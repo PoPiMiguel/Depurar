@@ -10,8 +10,13 @@ public class GestorEstudiantes {
         for (int i = 0; i < estudiante.getNotas().length; i++) { // Error: índice fuera de rango
             suma += estudiante.getNotas()[i];
         }
-        return suma / estudiante.getNotas().length; // Error si el array está vacío
+        double media = suma / estudiante.getNotas().length;;
+        if (estudiante.getNotas().length == 0){
+            media = 0;
+        }
+        return media;
     }
+    // Error si el array está vacío
 
     // Encuentra al estudiante con la mejor nota media
     public static Estudiante encontrarMejorEstudiante(Estudiante[] estudiantes) {
