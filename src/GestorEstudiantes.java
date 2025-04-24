@@ -22,7 +22,8 @@ public class GestorEstudiantes {
     public static Estudiante encontrarMejorEstudiante(Estudiante[] estudiantes) {
         Estudiante mejor = null;
         double mejorNota = -1;
-
+        //Añadiremos un try catch para este error
+        try{
         for (Estudiante estudiante : estudiantes) {
             double media = calcularNotaMedia(estudiante); // Posible fallo aquí
             if (media > mejorNota) {
@@ -30,7 +31,12 @@ public class GestorEstudiantes {
                 mejor = estudiante;
             }
         }
-        return mejor; // Error si la lista está vacía
+        return mejor;
+        }catch (NullPointerException e){
+            //Cuando no haya estudiantes nos mostrará lo siguiente.
+            System.out.println("No hay estudiantes.");
+        }
+        return mejor;
     }
 
     // Guarda los resultados en un fichero
