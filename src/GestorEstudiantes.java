@@ -10,7 +10,7 @@ public class GestorEstudiantes {
         for (int i = 0; i < estudiante.getNotas().length; i++) { // Error: índice fuera de rango
             suma += estudiante.getNotas()[i];
         }
-        double media = suma / estudiante.getNotas().length;;
+        double media = suma / estudiante.getNotas().length;
         if (estudiante.getNotas().length == 0){
             media = 0;
         }
